@@ -33,6 +33,40 @@ Shape::Shape(Type t, const Point& center, double R, double H) : type(t) {
     calculateVolumeAndSquare();
 }
 
+void Shape::shift(int m, int n, int k) {
+    for (int i = 0; i < points.size(); ++i) {
+        points[i].x += m;
+        points[i].y += n;
+        points[i].z += k;
+    }
+}
+
+void Shape::scaleX(int a) {
+    for (int i = 0; i < points.size(); ++i) {
+        points[i].x *= a;
+    }
+}
+
+void Shape::scaleY(int d) {
+    for (int i = 0; i < points.size(); ++i) {
+        points[i].y *= d;
+    }
+}
+
+void Shape::scaleZ(int e) {
+    for (int i = 0; i < points.size(); ++i) {
+        points[i].z *= e;
+    }
+}
+
+void Shape::scale(int s) {
+    for (int i = 0; i < points.size(); ++i) {
+        points[i].x /= s;
+        points[i].y /= s;
+        points[i].z /= s;
+    }
+}
+
 void Shape::calculateVolumeAndSquare() {
     if (type == LINE || type == SQUARE) {
         volume = 0;
