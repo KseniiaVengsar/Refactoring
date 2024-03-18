@@ -6,11 +6,9 @@ project(MyProject)
 add_executable(RefactoringEXE 
     ./Refactoring/main.cpp 
     ./Refactoring/shape.cpp 
-    ./Refactoring/transform.cpp
 )
 include_directories(
     ./Refactoring/shape.h 
-    ./Refactoring/transform.h 
 )
 
 
